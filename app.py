@@ -7,62 +7,86 @@ st.set_page_config(
     layout="wide"
 )
 
-# ====== HEADER ======
+# ====== BARRE LATÉRALE (SIDEBAR) ======
+with st.sidebar:
+    st.header("👤 Profil")
+    st.write("""
+    Technicien en géomatique passionné par l’aéronautique et les systèmes d’information géographique.
+    Expérience dans la cartographie aéronautique et l’analyse spatiale.
+    """)
+    
+    st.divider()
+    
+    st.header("🌐 Langues")
+    st.markdown("""
+    * *Français* : Maternel
+    * *Anglais* : Technique / Professionnel
+    * *Wolof* : Courant
+    """)
+    
+    st.divider()
+    
+    # Optionnel : Bouton de contact ou lien LinkedIn
+    st.info("💡 Disponible pour de nouvelles opportunités en Géomatique.")
+
+# ====== CONTENU PRINCIPAL ======
+# Header
 st.title("📄 Curriculum Vitae")
 st.header("Mansour DIOP")
 
-col1, col2 = st.columns([1,2])
-
-
-with col2:
-    st.write("📍 Dakar, Sénégal")
-    st.write("📧 mansour.diop@email.com")
-    st.write("🎯 Objectif : Ingénieur en géomatique / aéronautique")
+# Informations de contact sous le nom
+col_info1, col_info2 = st.columns(2)
+with col_info1:
+    st.markdown("📍 *Localisation :* Dakar, Sénégal")
+    st.markdown("📧 *Email :* mansour.diop@email.com")
+with col_info2:
+    st.markdown("🎯 *Objectif :* Ingénieur en géomatique / aéronautique")
 
 st.divider()
-
-# ====== PROFIL ======
-st.subheader("🧑‍💼 Profil")
-st.write("""
-Technicien en géomatique passionné par l’aéronautique et les systèmes d’information géographique.
-Expérience dans la cartographie aéronautique et l’analyse spatiale.
-""")
 
 # ====== COMPÉTENCES ======
 st.subheader("🛠️ Compétences")
 
-col1, col2 = st.columns(2)
+col_skill1, col_skill2 = st.columns(2)
 
-with col1:
+with col_skill1:
     st.markdown("""
+*Expertise SIG & Cartographie*
 * SIG (QGIS, ArcGIS)
-* Power BI
-* Cartographie VAC
+* Cartographie VAC (Visual Approach Chart)
+* Adobe Illustrator + MAPublisher
 * UMAP
     """)
 
-with col2:
+with col_skill2:
     st.markdown("""
-* Python (bases)
-* Streamlit
-* Adobe Illustrator + MAPublisher
+*Data & Développement*
+* Python (Data Analysis)
+* Streamlit (Dashboards)
+* Power BI
 * Analyse spatiale
     """)
+
+st.divider()
 
 # ====== EXPÉRIENCE ======
 st.subheader("💼 Expérience professionnelle")
 
 st.markdown("""
-*Cartographe Stagiaire — ASECNA*  
-2024
+*Cartographe Stagiaire — ASECNA* Dakar, Sénégal | 2024
 
-* Réalisation de cartes VAC
-* Analyse des données aéronautiques
-* Mise à jour des bases cartographiques
+* Réalisation de cartes VAC (Visual Approach Chart).
+* Analyse des données aéronautiques et intégration SIG.
+* Mise à jour des bases de données cartographiques.
 """)
+
+st.divider()
 
 # ====== FORMATION ======
 st.subheader("🎓 Formation")
 
 st.markdown("""
-**BTS Géomatique
+*BTS Géomatique* CEDT G15/Institut | Année
+
+* Apprentissage des techniques de levés, de la cartographie numérique et de la gestion de bases de données spatiales.
+""")
